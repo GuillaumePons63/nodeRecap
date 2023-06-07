@@ -1,5 +1,7 @@
 
 
+
+
 # NodeJS
 
 C'est un environnement d'exécution JavaScript côté serveur. Ce qui veut dire qu'avec [NodeJS](https://kourou.oclock.io/ressources/fiche-recap/node-js/), on peut exécuter du Javascript en dehors du navigateur, comme un certain PHP. 😎
@@ -22,12 +24,11 @@ app.get('/', (req, res) => {
 ```
 
 ## Middleware
-
 Ce joli mot que l'on peut traduire littéralement par "vaisselle du milieu" est en fait une fonction intermédiaire qui peut être ajouté sur nos routes. *(cf schema-middleware)*
 Les intérêts pour l'utiliser sont multiples :
 
- - Modification de l'objet de requête (request) : Un middleware peut ajouter des informations supplémentaires à l'objet de requête, par exemple, en analysant les en-têtes de requête ou en ajoutant des paramètres personnalisés. Cela permet de rendre ces informations disponibles pour les routes ultérieures.
- - Modification de l'objet de réponse (response) : Un middleware peut modifier la réponse avant qu'elle ne soit renvoyée au client. Cela peut inclure l'ajout d'en-têtes supplémentaires, la modification du corps de la réponse ou l'ajout de métadonnées.
+ - Modification de l'objet de requête (*request*) : Un middleware peut ajouter des informations supplémentaires à l'objet de requête, par exemple, en analysant les en-têtes de requête ou en ajoutant des paramètres personnalisés. Cela permet de rendre ces informations disponibles pour les routes ultérieures.
+ - Modification de l'objet de réponse (*response*) : Un middleware peut modifier la réponse avant qu'elle ne soit renvoyée au client. Cela peut inclure l'ajout d'en-têtes supplémentaires, la modification du corps de la réponse ou l'ajout de métadonnées.
  - Exécution de tâches communes : Les middlewares peuvent être utilisés pour effectuer des tâches courantes telles que l'authentification, la validation des données, la gestion des erreurs, la compression de réponse, le suivi des journaux, etc. Cela permet de centraliser ces fonctionnalités et de les réutiliser facilement dans différentes parties de l'application.
  - Contrôle du flux de la chaîne de traitement : Les middlewares peuvent également contrôler le flux de la chaîne de traitement en décidant s'il faut passer à l'étape suivante ou arrêter le traitement en envoyant une réponse au client. Cela peut être utile, par exemple, pour effectuer une vérification d'autorisation avant de traiter une requête.
 
@@ -47,9 +48,8 @@ app.get('/', myLogger, appController.home);
 Plein d'exemples de middlewares se cachent dans le projet *react-express.ACL*.
 
 ## Sequelize
-
 Pour interagir avec une BDD, on peut tout faire à la main, ce qui est une hérésie pour tout dev qui se respecte.
-Où l'on peut utiliser [Sequelize](https://sequelize.org/docs/v6/getting-started/) quand on dev sur NodeJS 🔥
+Ou l'on peut utiliser [Sequelize](https://sequelize.org/docs/v6/getting-started/) quand on dev sur NodeJS 🔥
 C'est un ORM qui permet de faire des choses assez sympathiques :
 
  - Modéliser les données en définissant les tables/colonnes/contraintes via des fichiers, qu'on place en général dans un dossier `Models`
@@ -145,7 +145,6 @@ module.exports = { User, Role };
 Une fois que ces fichiers sont écrits, c'est parti pour écrire vos requêtes dans les controllers à base de find, de query, d'update et autres joyeusetés ! 🤩
 
 ## PostgreSQL
-
 A l'instar de MySQL, c'est un système de gestion de base de données relationnelles (SGDBR).
 Il possède plein d'avantages :
 
@@ -162,7 +161,6 @@ Voici quelques fiches récap sur ce SGDBR :
  - [Rôles PostgreSQL](https://kourou.oclock.io/ressources/fiche-recap/roles-postgresql/)
 
 ## Tests unitaires
-
 A l'aube du développement, les stagiaires étaient désignés pour vérifier si l'évolution qui vient d'être mise en place ne cassait rien sur le site.
 Puis, un stagiaire très paresseux (donc très bon) s'est dit que ce serait pas mal d'automatiser la vérification d'un programme. Ainsi naquit les test unitaires 💥
 > Les tests unitaires sont des fonctions qui vérifient si d'autres
@@ -171,7 +169,6 @@ Puis, un stagiaire très paresseux (donc très bon) s'est dit que ce serait pas 
 Ces petits tests permettent de s'assurer que chaque fonctionnalité répond correctement au fur et à mesure que le développement avance. Aussi, il permet de détecter bien plus précisément les bugs et donc de les corriger plus vite.
 
 ### Supertest
-
 [Supertest](https://www.npmjs.com/package/supertest) est une librairie permettant de tester directement des routes HTTP, sans avoir besoin de cliquer sur un navigateur !
 ```js
 const request = require('supertest');
@@ -201,7 +198,7 @@ Il permet de créer des tests pour n'importe quel code Javascript, que ce soit d
 Aussi, il permet d'automatiser des tests, ce qui permet de faire de l'intégration continue (**CI**) et aussi de la livraison continue (**CD**). Ce qui veut dire que [les tests sont lancés lors d'un git push](https://medium.com/@trevorjperez1/add-jest-to-your-ci-cd-pipeline-with-github-actions-b369c0079173), royal 🤩
 
 ### TDD
-Le test driven development est une méthode consistant à d'abord écrire tous ses tests avant même de commencer à coder !
+Le **test driven development** est une méthode consistant à d'abord écrire tous ses tests avant même de commencer à coder !
 Une fois fait, il ne reste plus qu'à lancer les tests pour voir les erreurs et les rectifier une à une.
 Cette pratique possède de nombreux avantages :
 
