@@ -11,7 +11,7 @@ Un véritable [couteau suisse](https://redis.io/docs/getting-started/) qui perme
  - [Et bien plus encore](https://kourou.oclock.io/ressources/fiche-recap/presentation-de-redis/)
 
 ## Base de données
-Utiliser la BDD de Redis n'est pas comme utiliser une BDD physique comme avec PosgreSQL ou MySQL.
+Utiliser la BDD de Redis n'est pas pour utiliser une BDD physique comme avec PosgreSQL ou MySQL.
 Ici, on n'est plus dans un système de table avec des relations entre elles, on fait tout avec un système clé/valeur qui permet d'être beaucoup plus rapide. Les données ne sont plus stockées de manière physique sur le disque, mais en mémoire. Avec Redis, on ne requête plus les données avec du SQL, on fait du NoSQL (comme avec MongoDB) 🚀
 Exemple :
 ```js
@@ -80,7 +80,7 @@ await publisher.publish(
 ## Server Sent Events
 
 En l'état ça fonctionne mais ce n'est pas très utile.
-Pour que ce soit sympa, on pourrait imaginer faire un server capable d'envoyer des notifications en temps réel et les intercepter côté client.
+Pour que ce soit sympa, on pourrait imaginer faire un server capable d'envoyer des notifications en temps réel et de les intercepter côté client.
 Ca tombe bien, c'est tout le concept de l'atelier "jobs.atelier" et plus particulièrement des Servers Sent Events 😇
 
 Dans cet atelier, on a vu qu'il était possible de créer des routes sur Express qui s'exécutent à l'infini grâce à ces headers de réponse. Pratique pour mettre en place un canal de communication en temps réel :
@@ -94,7 +94,7 @@ Dans cet atelier, on a vu qu'il était possible de créer des routes sur Express
 res.writeHead(200, headers);
 ```
 
-Puis qu'on était capable via JS d'écouter une route en continue grâce à ce petit bout de code :
+Puis qu'on était capable via JS d'écouter une route en continu grâce à ce petit bout de code :
 ```js
 events = new EventSource(
     `http://localhost:5000/dashboardNotifications`
@@ -105,7 +105,7 @@ events.onmessage = event => {
 };
 ```
 
-Dans le cas de l'atelier, cela permet de trigger un évènement côté front, du type "un job a été liké".
+Dans le cas de l'atelier, cela permet de trigger un événement côté front, du type "un job a été liké".
 Une route côté server sera donc appelée, et s'occupera de mettre en place un publisher avec une donnée à transmettre.
 La route dashboardNotifications contiendra un subscriber, qui recevra la donnée du publisher.
 Le client pourra récupérer cette donnée grâce à son `events.onmessage`, sans jamais devoir recharger la page.

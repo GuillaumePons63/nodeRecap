@@ -1,7 +1,3 @@
-
-
-
-
 # NodeJS
 
 C'est un environnement d'exécution JavaScript côté serveur. Ce qui veut dire qu'avec [NodeJS](https://kourou.oclock.io/ressources/fiche-recap/node-js/), on peut exécuter du Javascript en dehors du navigateur, comme un certain PHP. 😎
@@ -24,13 +20,13 @@ app.get('/', (req, res) => {
 ```
 
 ## Middleware
-Ce joli mot que l'on peut traduire littéralement par "vaisselle du milieu" est en fait une fonction intermédiaire qui peut être ajouté sur nos routes. *(cf schema-middleware)*
+Ce joli mot que l'on peut traduire littéralement par "vaisselle du milieu" est en fait une fonction intermédiaire qui peut être ajoutée sur nos routes. *(cf schema-middleware)*
 Les intérêts pour l'utiliser sont multiples :
 
- - Modification de l'objet de requête (*request*) : Un middleware peut ajouter des informations supplémentaires à l'objet de requête, par exemple, en analysant les en-têtes de requête ou en ajoutant des paramètres personnalisés. Cela permet de rendre ces informations disponibles pour les routes ultérieures.
- - Modification de l'objet de réponse (*response*) : Un middleware peut modifier la réponse avant qu'elle ne soit renvoyée au client. Cela peut inclure l'ajout d'en-têtes supplémentaires, la modification du corps de la réponse ou l'ajout de métadonnées.
- - Exécution de tâches communes : Les middlewares peuvent être utilisés pour effectuer des tâches courantes telles que l'authentification, la validation des données, la gestion des erreurs, la compression de réponse, le suivi des journaux, etc. Cela permet de centraliser ces fonctionnalités et de les réutiliser facilement dans différentes parties de l'application.
- - Contrôle du flux de la chaîne de traitement : Les middlewares peuvent également contrôler le flux de la chaîne de traitement en décidant s'il faut passer à l'étape suivante ou arrêter le traitement en envoyant une réponse au client. Cela peut être utile, par exemple, pour effectuer une vérification d'autorisation avant de traiter une requête.
+ - Modification de l'objet de requête (*request*) : un middleware peut ajouter des informations supplémentaires à l'objet de requête, par exemple, en analysant les en-têtes de requête ou en ajoutant des paramètres personnalisés. Cela permet de rendre ces informations disponibles pour les routes ultérieures.
+ - Modification de l'objet de réponse (*response*) : un middleware peut modifier la réponse avant qu'elle ne soit renvoyée au client. Cela peut inclure l'ajout d'en-têtes supplémentaires, la modification du corps de la réponse ou l'ajout de métadonnées.
+ - Exécution de tâches communes : les middlewares peuvent être utilisés pour effectuer des tâches courantes telles que l'authentification, la validation des données, la gestion des erreurs, la compression de réponse, le suivi des journaux, etc. Cela permet de centraliser ces fonctionnalités et de les réutiliser facilement dans différentes parties de l'application.
+ - Contrôle du flux de la chaîne de traitement : les middlewares peuvent également contrôler le flux de la chaîne de traitement en décidant s'il faut passer à l'étape suivante ou arrêter le traitement en envoyant une réponse au client. Cela peut être utile, par exemple, pour effectuer une vérification d'autorisation avant de traiter une requête.
 
 Et comment ça s'utilise sur Express ?
 
@@ -145,12 +141,12 @@ module.exports = { User, Role };
 Une fois que ces fichiers sont écrits, c'est parti pour écrire vos requêtes dans les controllers à base de find, de query, d'update et autres joyeusetés ! 🤩
 
 ## PostgreSQL
-A l'instar de MySQL, c'est un système de gestion de base de données relationnelles (SGDBR).
+A l'instar de MySQL, c'est un système de gestion de bases de données relationnelles (SGDBR).
 Il possède plein d'avantages :
 
  - Mise en place de contrainte de clé étrangère
  - Conforme aux normes SQL, pour ne pas être dépaysé de MySQL
- - Extensible car on peut créer ses propres types de données, ses fonctions, ses opérateurs.. on peut presque tout personnaliser
+ - Extensible car on peut créer ses propres types de données, ses fonctions, ses opérateurs... On peut presque tout personnaliser
  - Performant et fonctionnel même avec des charges de travail à grande échelle
  - Beaucoup de développeurs l'utilisent !
 
@@ -194,7 +190,7 @@ request(app)
 
 ### JEST
 [Jest](https://jestjs.io/) est quant à lui un framework dédié aux tests.
-Il permet de créer des tests pour n'importe quel code Javascript, que ce soit des fonctions, des modules ou même des composants React.
+Il permet de créer des tests pour n'importe quel code Javascript, que ce soient des fonctions, des modules ou même des composants React.
 Aussi, il permet d'automatiser des tests, ce qui permet de faire de l'intégration continue (**CI**) et aussi de la livraison continue (**CD**). Ce qui veut dire que [les tests sont lancés lors d'un git push](https://medium.com/@trevorjperez1/add-jest-to-your-ci-cd-pipeline-with-github-actions-b369c0079173), royal 🤩
 
 ### TDD
@@ -208,4 +204,4 @@ Cette pratique possède de nombreux avantages :
  - Phase de développement beaucoup plus rapide
  - Favorise la bonne collaboration entre les développeurs
 
-Evidemment tout n'est pas rose, le fait d'écrire tous les tests est coûteux en temps, mais suivant les cas ça peut être plus rapide de suivre cette méthode 😇
+Evidemment, tout n'est pas rose, le fait d'écrire tous les tests est coûteux en temps, mais suivant les cas ça peut être plus rapide de suivre cette méthode 😇

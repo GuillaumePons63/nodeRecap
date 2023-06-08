@@ -34,10 +34,10 @@ function auth(req, res, next) {
 ```
 
 ## ACL
-Bon c'est chouette on peut dire qu'un utilisateur est bien de chez nous, mais c'est pas forcément pour ça que je veux qu'il accède à ma super page en l'honneur de [Christopher Walken](https://www.youtube.com/watch?v=wCDIYvFmgW8) 😱
-Pour n'autoriser que l'élite des utilisateurs à accéder au graal, les développeur ont mis au point le concept des **A**cces **C**ontrol **L**ist.
+Bon c'est chouette on peut dire qu'un utilisateur est bien de chez nous, mais ce n'est pas forcément pour ça que je veux qu'il accède à ma super page en l'honneur de [Christopher Walken](https://www.youtube.com/watch?v=wCDIYvFmgW8) 😱
+Pour n'autoriser que l'élite des utilisateurs à accéder au Graal, les développeurs ont mis au point le concept des **A**cces **C**ontrol **L**ist.
 Pour faire simple, c'est un système qui permet de définir des règles spécifiques pour chaque utilisateur ou groupe d'utilisateurs, afin de déterminer ce à quoi ils ont le droit d'accéder et quelles actions ils peuvent effectuer sur ces ressources.
-Ces ACL peuvent être mis en place sur des systèmes d'exploitation, dans des pares-feux ou bien sur une application web qui utilise NodeJS. 🥳
+Ces ACL peuvent être mis en place sur des systèmes d'exploitation, dans des pare-feux ou bien sur une application web qui utilise NodeJS. 🥳
 
 ```js
 // route
